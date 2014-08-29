@@ -451,6 +451,7 @@ It is therefore more straightforward to find the average effect of single-cell p
 The population-level response to a perturbation, $\hat{x}(\tilde{t})$, is therefore defined as:
 \begin{equation}
   \hat{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta)\hat{p}(\theta, \tilde{t}) + \delta x(\theta, \tilde{t})p(\theta, \tilde{t}) \; d\theta
+  \label{eq:xhat}
 \end{equation}
 Here the first term is equivalent to $\hat{x}_{ss}(\tilde{t})$, the steady-state perturbed trajectory, while the second term decays to zero as individual oscillators return to their steady-state amplitude.
 The accuracy of the continuous phase-diffusion model was tested by explicitly simulating a perturbation to a population of 225 uncoupled oscillators using a stochastic simulation algorithm \cite{Gillespie1977, Sanft2011a}.
@@ -504,7 +505,9 @@ The experimental data is de-noised using a discrete wavelet transform \cite{Leis
 In the experiment, a light pulse is given to desynchronize a colony of cells, resulting in drastically reduced amplitudes.
 A second (longer) light pulse subsequently re-synchronizes the population, resulting in increased amplitudes.
 To capture this phenomenon {\itshape in silico}, we used a recent model of the core circadian feedback circuit \cite{Hirota2012}.
-We assumed an initial phase population with $\sigma = 0.1$ and calculated a phase diffusivity parameter $d = 0.104$ from the experimental control trajectory.
+In order to find parameters for the phase density function, we assumed an
+initial phase population with $\sigma = 0.1$ and calculated a phase diffusivity
+parameter $d = 0.104$ from the experimental control trajectory.
 
 The next step in capturing the experimental data was finding a perturbation capable of desynchronizing the system.
 To find such a perturbation, we calculated population-level ARCs at several different knockdown strengths for each parameter in the model.
@@ -533,6 +536,7 @@ The relative amplitude of the model equations has been scaled to match that of t
 Following the second light pulse, stronger peaks are seen (teal), which gradually damp as time evolves.} \end{center}
 \end{figure}
 
+Population-level trajectories were found by solving for the resulting limit cycle trajectories at every phase, and subsequently finding the weighted average of these trajectories according the phase density (as described in Eqs.~\ref{eq:xbar} and \ref{eq:xhat}).
 The simulated control and perturbed trajectories, Fig.~5B, closely match the experimental results, in which the model captures both the phase shifts and amplitude modulation of the light pulses.
 The phase probability density function for the light-sensitive model trajectory is shown in Fig.~5C for several representative time points.
 Changes to the synchronization of the population from each perturbation are readily apparent, with both perturbations inducing a bimodal distribution in the phase density.

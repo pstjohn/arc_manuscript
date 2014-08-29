@@ -1,7 +1,7 @@
 \documentclass[11pt, letterpaper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /dev/fd/63      Fri Aug 29 11:22:01 2014
-%DIF ADD main_text.tex   Fri Aug 29 11:21:56 2014
+%DIF DEL /dev/fd/63      Fri Aug 29 12:48:06 2014
+%DIF ADD main_text.tex   Fri Aug 29 12:47:59 2014
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
 
@@ -92,7 +92,7 @@ Recent studies have further highlighted the importance of high peripheral clock 
 Mice lacking an intact clock have been shown to develop metabolic disease \cite{Marcheva2010}, while low amplitude clock oscillations, whether caused by diet \cite{Hatori2012} or age \cite{Chang2013} have also been tied to metabolic disorders.
 An understanding of how clock amplitudes are regulated is therefore a topic of ongoing research with potential therapeutic applications \cite{St.John2014}.
  Unlike the network of oscillators in the SCN, in which intercellular coupling maintains robust amplitudes even in the absence of external cues, peripheral oscillators are thought to lack a direct mechanism to spontaneously synchronize \cite{Welsh2004}.
-As a result, populations of peripheral clocks are likely synchronized by common external cues, with stochastic effects and cell heterogeneity driving entrained populations \DIFdelbegin \DIFdel{to gradually desynchronize}\DIFdelend \DIFaddbegin \DIFadd{gradually toward desynchrony}\DIFaddend .
+As a result, populations of peripheral clocks are likely synchronized by common external cues, with stochastic effects and cell heterogeneity driving entrained populations gradually toward desynchrony.
 
 The development of immortalized peripheral oscillator cell lines with bioluminescent reporters has allowed high-throughput analysis of the responses of circadian rhythms to genetic and pharmacological manipulation \cite{Hirota2010, Ramanathan2014}.
 In addition to providing experimental tractability, these systems provide detailed information on the amplitude of oscillations in gene transcription, a measure often lacking from earlier experiments using wheel-running activity.
@@ -441,7 +441,7 @@ While each cell's expression level follows the limit cycle, the population ampli
   \begin{center}
     \includegraphics[width=.75\textwidth]{figures/figure_3.pdf}
     \caption{
-{\bfseries Synchrony \DIFdelbeginFL \DIFdelFL{effects }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{affects }\DIFaddendFL population-level amplitude.}
+{\bfseries Synchrony affects population-level amplitude.}
 ({\bfseries A}) Stochastic fluctuations cause a population of cells to gradually desynchronize with time.
 The phase probability density, $p(\theta, \tilde{t})$, gradually widens as it advances in phase according to the mean period.
 ({\bfseries B}) The mean amplitude from a population of oscillators is determined by the probability density function $p(\theta, \tilde{t})$ and the oscillator's limit cycle $x^\gamma(\theta)$.
@@ -473,7 +473,8 @@ It is therefore more straightforward to find the average effect of single-cell p
 The population-level response to a perturbation, $\hat{x}(\tilde{t})$, is therefore defined as:
 \begin{equation}
   \hat{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta)\hat{p}(\theta, \tilde{t}) + \delta x(\theta, \tilde{t})p(\theta, \tilde{t}) \; d\theta
-\end{equation}
+  \DIFaddbegin \label{eq:xhat}
+\DIFaddend \end{equation}
 Here the first term is equivalent to $\hat{x}_{ss}(\tilde{t})$, the steady-state perturbed trajectory, while the second term decays to zero as individual oscillators return to their steady-state amplitude.
 The accuracy of the continuous phase-diffusion model was tested by explicitly simulating a perturbation to a population of 225 uncoupled oscillators using a stochastic simulation algorithm \cite{Gillespie1977, Sanft2011a}.
 Good agreement between the stochastic population and continuous approximation was shown in phase shift, single-cell level amplitude change, and alteration of population synchrony (Fig.~S2, Movies S1 \& S2).
@@ -504,7 +505,7 @@ These results underscore the importance in considering both single-cell and popu
     \caption{
 {\bfseries Response curves describe different types of amplitude change.}
 A population of cells is simulated using a detailed model of circadian rhythms (Model 2).
-Each cell in the population is subjected to a $20\%$ increase in the $\mathit{vtp}$ parameter \DIFaddbeginFL \DIFaddFL{(}{\itshape \DIFaddFL{Per}} \DIFaddFL{transcription rate) }\DIFaddendFL for $d=\nicefrac{\pi}{2}$, inducing both a phase and amplitude change.
+Each cell in the population is subjected to a $20\%$ increase in the $\mathit{vtp}$ parameter ({\itshape Per} transcription rate) for $d=\nicefrac{\pi}{2}$, inducing both a phase and amplitude change.
 ({\bfseries A}) The phase response curves are shown for both the single limit cycle oscillator and population average, left.
 The population-level ARC is shown together with the single-cell amplitude response, with both curves normalized to $\sigma=1$.
 ({\bfseries B-C}) Population-level rhythms, $\hat{x}(\tilde{t})$ resulting from perturbations given at the indicated phases in A (red and cyan lines, respectively).
@@ -526,7 +527,9 @@ The experimental data is de-noised using a discrete wavelet transform \cite{Leis
 In the experiment, a light pulse is given to desynchronize a colony of cells, resulting in drastically reduced amplitudes.
 A second (longer) light pulse subsequently re-synchronizes the population, resulting in increased amplitudes.
 To capture this phenomenon {\itshape in silico}, we used a recent model of the core circadian feedback circuit \cite{Hirota2012}.
-We assumed an initial phase population with $\sigma = 0.1$ and calculated a phase diffusivity parameter $d = 0.104$ from the experimental control trajectory.
+\DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{In order to find parameters for the phase density function, we }\DIFaddend assumed an
+initial phase population with $\sigma = 0.1$ and calculated a phase diffusivity
+parameter $d = 0.104$ from the experimental control trajectory.
 
 The next step in capturing the experimental data was finding a perturbation capable of desynchronizing the system.
 To find such a perturbation, we calculated population-level ARCs at several different knockdown strengths for each parameter in the model.
@@ -546,7 +549,7 @@ Instead, the initial phase of simulation was chosen such that the first pulse oc
 ({\bfseries A}) Response curves for the parameter perturbation used to model the first light pulse in (B).
 The initial phase of the system is chosen to coincide with the strong dip in the population-level ARC (left).
 ({\bfseries B}) De-noised bioluminescence data from Ukai {\itshape et al.} 2007 (top) demonstrates population-level amplitude change resulting from two light pulses \cite{Ukai2007}.
-\DIFdelbeginFL \DIFdelFL{The }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Circadian oscillations are suppressed by the }\DIFaddendFL first \DIFaddbeginFL \DIFaddFL{light }\DIFaddendFL pulse \DIFdelbeginFL \DIFdelFL{desynchronizes the system, while }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and rescued by }\DIFaddendFL the second\DIFdelbeginFL \DIFdelFL{resynchronizes}\DIFdelendFL .
+Circadian oscillations are suppressed by the first light pulse and rescued by the second.
 These perturbations were reproduced {\itshape in silico} (bottom) using the model from Hirota {\itshape et al.} 2012.
 The experimental results are qualitatively captured by the model, demonstrating the suitability of the method in capturing bioluminescence experiments.
 The relative amplitude of the model equations has been scaled to match that of the normalized bioluminescence profiles.
@@ -555,7 +558,8 @@ The relative amplitude of the model equations has been scaled to match that of t
 Following the second light pulse, stronger peaks are seen (teal), which gradually damp as time evolves.} \end{center}
 \end{figure}
 
-The simulated control and perturbed trajectories, Fig.~5B, closely match the experimental results, in which the model captures both the phase shifts and amplitude modulation of the light pulses.
+\DIFaddbegin \DIFadd{Population-level trajectories were found by solving for the resulting limit cycle trajectories at every phase, and subsequently finding the weighted average of these trajectories according the phase density (as described in Eqs.~\ref{eq:xbar} and \ref{eq:xhat}).
+}\DIFaddend The simulated control and perturbed trajectories, Fig.~5B, closely match the experimental results, in which the model captures both the phase shifts and amplitude modulation of the light pulses.
 The phase probability density function for the light-sensitive model trajectory is shown in Fig.~5C for several representative time points.
 Changes to the synchronization of the population from each perturbation are readily apparent, with both perturbations inducing a bimodal distribution in the phase density.
 While experimental data on individual cell phases was unavailable for this data set, bimodal distributions in SCN neuron firing following a phase shift have previously been seen experimentally \cite{Rohling2011}.
