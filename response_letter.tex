@@ -67,8 +67,15 @@ Is the novelty here that these can be used to analyze data? If so, this is not w
 
 We acknowledge that many of the mathematical formulas presented in the ``Results'' section have been used by many other studies: our intention was to introduce concepts and notations to readers who might be less familiar with the large body of previous literature.
 The reviewer's point is a good one, however, and we have endeavored to draw as clear a line as possible between new concepts and derivations and those which come from the literature.
-To this end, we have moved as much of the introductory derivations as possible to the ``Materials and Methods'' section, introducing previous work on phase-diffusion models before proceeding with sensitivity-based methods for finding the ARC.
-Additionally, we have included additional references for historical derivations of many of the results.
+{\itshape\bfseries To this end, we have moved as much of the introductory derivations as possible to the ``Materials and Methods'' section}, introducing previous work on phase-diffusion models before proceeding with sensitivity-based methods for finding the ARC.
+Additionally, we have included additional references for historical derivations of many of the results:
+\begin{manuscript}{Page 21}
+\bfseries
+33. Kuramoto, Y., 1984. Chemical Oscillations, Waves, and Turbulence. Springer-Verlag Berlin
+Heidelberg.\\
+34. Teramae, J.-n., and D.~Tanaka, 2004. {Robustness of the noise-induced phase synchronization in a general
+  class of limit cycle oscillators.} \emph{Phys. Rev. Lett.} 93:204103.
+\end{manuscript}
 
 To address the point directly, we consider the following contributions of the manuscript as novel, and highlight these in the results section:
 
@@ -78,7 +85,13 @@ To address the point directly, we consider the following contributions of the ma
   \item We derive a method to approximate a stochastic population of noninteracting oscillators using continuous methods, including accounting for deviations from limit cycle trajectories.
 \end{itemize}
 
-While we have left some introductory derivations in the Results section (notably, derivations of the PRC and ARC for phase-only models), these sections have been clearly labeled.
+While we have left some introductory derivations in the Results section (notably, derivations of the PRC and ARC for phase-only models), these sections have been clearly labeled:
+
+\begin{manuscript}{Page 11}
+\bfseries
+We next briefly describe how to calculate the PRC and ARC for a phase-density model.
+These approaches are commonly used in understanding phase models (14, 33), and are presented here to match previous definitions for single cells.
+\end{manuscript}
 
 
 \begin{reviewer}
@@ -90,8 +103,24 @@ However, details on the connection to the first part of the manuscript are spars
 \end{reviewer}
 
 We have followed the reviewer's suggestion and expanded the section of the manuscript that focuses on the application to experimental data.
-Specifically, we detail our method of selecting the parameter knockdown as well as the initial phase through the use of response curves.
-In doing so, we have expanded Fig.~5 to include response curves for the first parameter pulse, demonstrating the strong dip in the population-level ARC.
+For instance, we detail our method of selecting the parameter knockdown as well as the initial phase through the use of response curves:
+
+\begin{manuscript}{Page 16}
+{\bfseries
+The next step in capturing the experimental data was finding a perturbation capable of desynchronizing the system.
+To find such a perturbation, we calculated population-level ARCs at several different knockdown strengths for each parameter in the model.
+We selected the} degradation rate of {\itshape Per} mRNA {\bfseries from the feasible parameters}, due to PER's known induction by CREB following photo-perturbation (46).
+\end{manuscript}
+
+We have also expanded Fig.~5 to include response curves for the first parameter pulse, demonstrating the strong dip in the population-level ARC:
+
+\begin{manuscript}{Page 17}
+\bfseries
+Figure 5: Method allows direct comparison between model results and experimental bioluminescence profiles.
+({\bfseries A}) Response curves for the parameter perturbation used to model the first light pulse in (B).
+The initial phase of the system is chosen to coincide with the strong dip in the population-level ARC (left). \dots
+\end{manuscript}
+
 
 \begin{reviewer}
 Ultimately, I am not sure what the point of the manuscript is. The authors state that 
@@ -105,7 +134,13 @@ If this is indeed the novel contribution, then this needs to be better explained
 \end{reviewer}
 
 We acknowledge that our placement of the introductory material for the phase density methods likely gave the impression that our major results were already well-known.
-We believe our revised manuscript gives a better emphasis to the novel aspects of the study.
+We believe our revised manuscript gives a better emphasis to the novel aspects of the study, which we highlight in the introduction:
+
+\begin{manuscript}{Page 4}
+In this study, {\bfseries we describe approaches} to quantify amplitude change in a population of {\bfseries non-interacting} oscillators.
+{\bfseries By exploiting the independence of each oscillator, we derive computationally efficient methods to approximate the mean dynamics of full stochastic simulations.
+Additionally, our method allows the calculation of ARCs at both the single-cell and population level, allowing the behavior of the system to be quickly profiled.}
+\end{manuscript}
 
 \begin{reviewer}
 I suggest rewriting the manuscript with an emphasis on the application.
@@ -113,24 +148,54 @@ It is still a bit unclear how the proposed method can be applied to real data, a
 Therefore a focus on these ideas, rather than the review of results about PRCs, ARCs and phase densities, would significantly improve the manuscript.
 \end{reviewer}
  
-We have modified extensive portions of the manuscript in order to make the novel contributions of the manuscript more clear, and added additional explanations to the application of the experimental data.
+We have modified extensive portions of the manuscript in order to make the novel contributions of the manuscript more clear, and added additional explanations to the application of the experimental data:
+
+\begin{manuscript}{Page 16}
+From the experimental system, it appears the light pulse temporarily reduces PER2-luciferase amplitudes immediately following perturbation, separate from the overall change in population synchrony.
+{\bfseries This result is most obvious after the second light pulse, where rhythms require some time before their maximum amplitude is reached.
+Such a delay} is indicative of perturbations to the {\bfseries limit cycle system, suggesting} a contribution from single-cells in determining the population amplitude.
+{\bfseries Light-induced amplitude suppression in fibroblasts is therefore likely mediated at the single-cell level at short time-scales, and at the population level for longer time-scales.
+To improve the fit of the model to the data, the response curves could be fit to match experimentally predicted values.
+Infinitesimal PRCs and ARCs calculated at the single-cell level are numerically efficient to evaluate, and could be more readily incorporated into a parameter estimation algorithm than explicit stochastic simulations of a population of oscillators.}
+\end{manuscript}
+
+Additionally, {\itshape\bfseries many details on the derivations on PRCs have been removed.}
 
 \begin{reviewer}
 Minor comments: 
-- Equation 11. Could $\Theta(x_0)$ be defined as $\theta$ such that $lim_{t\rightarrow \infty} | x(t)-x^\gamma(\theta+t)|=0$ ?
+- Equation 11.
+Could $\Theta(x_0)$ be defined as $\theta$ such that $lim_{t\rightarrow \infty} | x(t)-x^\gamma(\theta+t)|=0$?
 \end{reviewer}
 
-Yes, although for length constraints (and to remove excess review of results on PRCs) this equation has been removed.
+Yes, although for length constraints (and to remove excess review of results on PRCs) {\itshape\bfseries this equation has been removed.}
 
 \begin{reviewer}
 - Equation 16: Could $\mu$ just be defined as $\int_0^{2\pi} y(t)dt/(2\pi)$ ?
 \end{reviewer}
 
+Yes, and we have changed this definition accordingly:
+
+\begin{manuscript}{Page 7}
+\begin{equation}
+  \mu \coloneqq \int_0^{2\pi} \frac{x^\gamma(\theta)}{2\pi} \; d\theta
+  \tag{21}
+\end{equation}
+\end{manuscript}
+
+Our original definition was intended to demonstrate why $x(t)$ and $y(t)$ would have identical means, but we have simplified the definition to the one suggested.
+
 \begin{reviewer}
 - Equation 27 is incomplete. 
 \end{reviewer}
  
-We have fixed this regrettable error, and thank the reviewer for their careful reading.
+We have fixed this regrettable error, and thank the reviewer for their careful reading:
+
+\begin{manuscript}{Page 10}
+\begin{equation}
+  \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0} \frac{\Delta A}{\tilde{d}\, \Delta p}
+  \tag{31}
+\end{equation}
+\end{manuscript}
 
 \begin{reviewer}
 - In Figure 5A, the initial condition for the experiments is 1. Why did the authors use the initial condition $0.5$ in the simulations?
@@ -141,6 +206,7 @@ Therefore the relative amplitudes of both systems had to be compared, with the a
 The phase offset of the experimental and model systems was also not fit exactly - we added an explanation of the rationale behind this decision to the manuscript:
 
 \begin{manuscript}{Page 16}
+\bfseries
 The single-cell and population-level response curves for this parameter choice are shown in Fig.~5A, which demonstrates the strong desynchronization that occurs at $\theta\approx\nicefrac{\pi}{4}$.
 Since the reporter used in the experimental system likely has a phase lag from the corresponding mRNA, we did not try to match the initial phase of the simulation to experiment.
 Instead, the initial phase of simulation was chosen such that the first pulse occurred when the system was at the phase that corresponded with the minimum of the population-level ARC.
@@ -170,7 +236,17 @@ a. (21) and (22) are not equal.
 \end{reviewer}
 
 This mistake has been corrected.
-Eq.~22 (now 27) is obtained by factoring the difference of squares from the previous equation, but we mistakenly kept a squared term from the previous step.
+Eq.~22 (now 27) is obtained by factoring the difference of squares from the previous equation, but we mistakenly kept a squared term from the previous step:
+
+\begin{manuscript}{Page 10}
+  \begin{equation}
+  = \frac{1}{\delta x(0)} \left[\left(\delta x(\tilde{t}) -
+    \tilde{f}\left(x^\gamma(t_\theta)\right)\delta\theta\right) \left(\delta
+    x(\tilde{t}) + \tilde{f}\left(x^\gamma(t_\theta)\right)\delta\theta +
+    2(x^\gamma(t_\theta) - \mu)\right) \right]
+    \tag{27}
+  \end{equation}
+\end{manuscript}
 
 \begin{reviewer}
 b. (22) and (23) are not equal. (23) is an approximation of (22) when delta theta approaches to zero. 
@@ -179,20 +255,26 @@ b. (22) and (23) are not equal. (23) is an approximation of (22) when delta thet
 This is a fair point, as we dropped the infinitesimal elements before taking the limit.
 The equality is valid in the differential limit as the phase shift for an infinitesimal perturbation will be identically 0, and therefore this error in notation does not affect the validity of the results.
 However, including the delta theta terms explicitly made the equation too long for a single line.
-Since the equation (with the delta theta terms included) was largely a repetition of the previous equation, we have removed it.
+Since the equation (with the delta theta terms included) was largely a repetition of the previous equation, {\bfseries\itshape we have removed it.}
 
 \begin{reviewer}
 c. (23) and (24) are not equal.
 \end{reviewer}
 
-This typo was also fixed by removing the squared term in Eq.~24 (now 29), which was unfortunately propagated from the typo in Eq.
-22.
+This typo was also fixed by removing the squared term in Eq.~24 (now 29), which was unfortunately propagated from the typo in Eq.~22.
+
+\begin{manuscript}{page 10}
+  \begin{equation}
+  = 2\left(S(\tilde{t}) - \tilde{f}(x^\gamma(t_\theta))\frac{d\theta}{dx}\right)\left(x^\gamma(t_\theta) - \mu\right)
+    \tag{29}
+  \end{equation}
+\end{manuscript}
 
 \begin{reviewer}
 d. (27) is not complete.
 \end{reviewer}
 
-This error has been fixed.
+{\itshape\bfseries This error has been fixed}, as noted in our response to Reviewer \#1.
 
 \begin{reviewer}
 e. Please, provide an intuitive explanation for formulas (26) and (28) for the reader. 
@@ -201,20 +283,20 @@ e. Please, provide an intuitive explanation for formulas (26) and (28) for the r
 The following two explanatory remarks have been added following Eq.~26 and 28 (now 30 and 32):
 
 \begin{manuscript}{Page 10}
-Here, the first term of the integrand $(S - \tilde{f}\dot{\theta})$ tracks the distance from the perturbed trajectory to the limit cycle, which decays to zero as $t \to \infty$.
-The second term $(x^\gamma - \mu)$ weights this distance by whether or not the deviation occurs above or below the oscillatory mean, yielding negative amplitude changes when the trajectory is perturbed closer to the mean.
-Just as with the parameter-impulse PRC, the infinitesimal parameter-impulse ARC is defined as:
+  {\bfseries Here, the first term of the integrand $(S - \tilde{f}\dot{\theta})$ tracks the distance from the perturbed trajectory to the limit cycle, which decays to zero as $t \to \infty$.
+The second term $(x^\gamma - \mu)$ weights this distance by whether or not the deviation occurs above or below the oscillatory mean, yielding negative amplitude changes when the trajectory is perturbed closer to the mean.}
+Just as with the parameter-impulse PRC, the infinitesimal parameter-impulse ARC {\bfseries is defined as}:
 \begin{equation}
   \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0}
   \frac{\Delta A}{\tilde{d}\, \Delta p}
   \tag{31}
 \end{equation}
-and may be calculated from the state-impulse version with the following relationship:
+{\bfseries and} may be calculated from the state-impulse version with the following relationship:
 \begin{equation}
   \frac{d}{d\tilde{t}}\frac{dA}{dp} = \frac{dA}{dx}\frac{d\tilde{f}}{dp}
   \tag{32}
 \end{equation}
-As with Eq.~11, this equivalency reflects the fact that for a pulse of infinitely short duration, a parameter change is equivalent to changing the state of the system along the direction specified by the Jacobian.
+{\bfseries As with Eq.~11, this equivalency reflects the fact that for a pulse of infinitely short duration, a parameter change is equivalent to changing the state of the system along the direction specified by the Jacobian.}
 \end{manuscript}
 
 \begin{reviewer}
@@ -223,7 +305,7 @@ Weakly coupled oscillators have been used in a different context (e.g.\ Kuramoto
 Please, correct this.
 \end{reviewer}
  
-The terminology has been changed throughout the manuscript.
+{\bfseries\itshape The terminology has been changed throughout the manuscript.}
 We thank the reviewer for this correction.
 
 \begin{reviewer}
@@ -239,9 +321,9 @@ Our point in discussing the phase response curves of Fig.~4A is only that phase 
 We have added the following text to the manuscript to make this point more explicit:
 
 \begin{manuscript}{Page 14}
-In this case, the population-level phase change is a slightly smoothed version of the single-cell PRC, since the population has an averaging effect on incoming perturbations with each cell receiving the input at a slightly different internal phase.
-This smoothing follows from the consistent definition of phase between the single-cell and population level.
-In the ARC plot, however, the shape of the single-cell and population-based ARC are different, since they describe different types of changes (finite vs.\ sustained) in the output trajectories.
+  {\bfseries In this case,} the population-level phase change is a slightly smoothed version of the single-cell {\bfseries PRC}, since the population has an averaging effect on incoming perturbations with each cell receiving the input at a slightly different internal phase.
+{\bfseries This smoothing follows from the consistent definition of phase between the single-cell and population level.
+In the ARC plot, however, the shape of the single-cell and population-based ARC are different, since they describe different types of changes (finite vs.\ sustained) in the output trajectories.}
 \end{manuscript}
 
 The PRC result in Fig.~4A is not a special case, but other types of phase-resetting behavior in a population can occur.
@@ -254,11 +336,12 @@ Is this a general statement or the conclusion of a specific simulation result (F
 If this is a general statement, please provide more details and intuitive explanations, as well as further simulation results with more types of models, or analysis.
 \end{reviewer}
  
-This is a general statement regarding the dynamics of populations and limit-cycle systems. Ultimately, non-interacting oscillators have no driving force to re-entrain, so changes to synchrony remain long after limit-cycle oscillations are restored.
+{\bfseries\itshape This is a general statement} regarding the dynamics of populations and limit-cycle systems. Ultimately, non-interacting oscillators have no driving force to re-entrain, so changes to synchrony remain long after limit-cycle oscillations are restored.
 
 In addition to adding simulation results with additional models (see below), we have changed the quoted text to be more explicit in this explanation:
 
 \begin{manuscript}{Page 14}
+  \bfseries
 These examples demonstrate the qualitative differences between amplitude change mediated at the single-cell and population level.
 Their characteristic features allow us to distinguish between these two sources of amplitude change without explicitly recording single-cell amplitudes: amplitude change induced at the population-level will be sustained, but may be masked in the short term by changes to single-cell level amplitudes.
 Similarly, a change induced at the single-cell level will be evident only at short time-scales.
@@ -286,20 +369,35 @@ Points 5 and 6 are linked concerns regarding the simulation and approximation of
 The noise generated using the Gillespie algorithm for non-elementary propensity functions can indeed be different than the noise that would occur for the full system when expanded into elementary reactions.
 That being said, the level of noise present in Fig.~5 was chosen by varying the volume parameter of the stochastic simulation so that desynchronization rates matched experimentally observed data.
 We therefore do not believe that incorrect noise estimates from the Gillespie algorithm affects our approximations of the stochastic population.
-Regardless, we tested the method with two additional models.
+{\itshape\bfseries Regardless, we tested the method with two additional models.}
 First, the Oregonator, is a simple mass-action oscillatory reaction system considered in Gillespie's 1977 paper.
 We used a perturbation to the conversion rate of two of the intermediate species at 6 different phases to test the accuracy of the perturbed approximation, $x_hat$.
 Second, we tested the method with a stochastic simulation of a more detailed circadian model.
 For consistency, we used the same model and perturbation as was used in Fig.~5 (for the first light pulse).
 The results of these simulations are included as Fig.~S3, which (similar to Fig.~S2) demonstrates good agreement between the stochastic models and continuous approximations.
+
+\begin{manuscript}{Supplemental Info, Page 6}
+\bfseries
+Figure S3: Validation of continuous methods with alternate models.
+(\bfseries A) The Oregonator model (Model 3) was tested as an example of a mass-action limit cycle oscillator.
+A population of 2000 oscillators was perturbed at size different mean phases, $\mu$, by increasing the $\mathit{c2}$ parameter by $50\%$ for $d=\pi$ (highlighted region).
+Only the average $\mathit{Y2}$ variable is plotted.
+({\bfseries B}) The model described in (2) (Model 2) was similarly tested at a variety of mean phases by reducing the $\mathit{vdp}$ parameter by $28.5\%$ and plotting the resulting $\mathit{c2}$ state variable (as in Fig.~5).
+Parameters for the continuous approximations were found by estimating the phase, initial standard deviation, period, and phase diffusivity of the control population.
+Good agreement is seen between the continuous and stochastic simulations, indicating the proposed method is suitable for predicting the population-level responses for a variety of model types.
+\end{manuscript}
  
 \begin{reviewer}
 Minor concerns: 
 
-1) In most case, "hat" mark is used to represent various perturbed variables. However, "hat" mark is also used to represent the rescaled time variable. This can lead to confusion in understanding the equations. Please, use different notation for scaled time.
+1) In most case, ``hat'' mark is used to represent various perturbed variables.
+However, ``hat'' mark is also used to represent the rescaled time variable.
+This can lead to confusion in understanding the equations.
+Please, use different notation for scaled time.
 \end{reviewer}
 
-This is a good suggestion, and we have changed the notation for scaled time to $\tilde{t}$ throughout the manuscript. Additionally, we noticed that our notation for pulse duration conflicted with our definition of phase diffusivity, so pulse duration has been changed to $\tilde{d}$.
+This is a good suggestion, and {\itshape\bfseries we have changed the notation for scaled time to $\tilde{t}$ throughout the manuscript.}
+Additionally, we noticed that our notation for pulse duration conflicted with our definition of phase diffusivity, so pulse duration has been changed to $\tilde{d}$.
 
 \begin{reviewer}
 2) Please provide a little more detail for the derivation of (14).
@@ -309,7 +407,13 @@ The derivation for Eq.~14 (now 11) is analogous to Eq.~28 (now 32), a lengthy pr
 For space constraints, we have added only brief remarks on their derivation:
 
 \begin{manuscript}{Page 5}
-This result follows from the fact that in the limit of an infinitely short and small parameter pulse, $\Delta x(0) \to \nicefrac{d\tilde{f}}{dp}\,\tilde{d}\, \Delta p$.
+  Methods for efficiently calculating these quantities using ODE sensitivity analysis have been developed (24), with the important result that {\bfseries the parameter- and state-impulse PRCs can be related by the Jacobian matrix:}
+\begin{equation}
+  \frac{d}{d\tilde{t}}\frac{d\theta}{dp} = \frac{d\theta}{dx}\frac{d\tilde{f}}{dp} 
+  \tag{11}
+\end{equation}
+{\bfseries This result follows from the fact} that in the limit {\bfseries of an infinitely short and small parameter pulse, $\Delta x(0) \to \nicefrac{d\tilde{f}}{dp}\,\tilde{d}\, \Delta p$.
+This result follows from the fact that in the limit of an infinitely short and small parameter pulse, $\Delta x(0) \to \nicefrac{d\tilde{f}}{dp}\,\tilde{d}\, \Delta p$.}
 \end{manuscript}
 
 \begin{reviewer}
@@ -317,7 +421,7 @@ This result follows from the fact that in the limit of an infinitely short and s
 Please, do not link the discontinuous points, and redraw the PRCs.
 \end{reviewer}
 
-This plot has been corrected.
+{\bfseries\itshape This plot has been corrected.}
 
 \begin{reviewer}
 4) The PRC and ARC in Fig 4A are in response to which perturbation?
@@ -327,15 +431,15 @@ Please provide details on how Fig 4A is simulated.
 Additional details on the simulation of Fig. 4 have been added to both the main text and the figure legend:
 
 \begin{manuscript}{Page 14}
-We next demonstrate the usefulness of single-cell and population level ARCs in predicting the mean response of a population.
-Using a detailed single-cell model (Model 2), we calculate the response of the system, specifically the average CRY2 protein expression level, to a temporary increase in {\itshape Per} transcription rate.
-In Fig.~4A, we plot the resulting single-cell and population-level response curves.
+{\bfseries We next demonstrate the usefulness of single-cell and population level ARCs in predicting the mean response of a population.
+  Using a detailed single-cell model (Model 2), we calculate the response of the system, specifically the average CRY2 protein expression level, to a temporary increase in {\itshape Per} transcription rate.}
+In Fig.~4A, we plot {\bfseries the resulting} single-cell and population-level response curves.
 \end{manuscript}
 
 \begin{manuscript}{Page 15}
-Figure 4: Response curves describe different types of amplitude change.
+  Figure 4: Response curves {\bfseries describe different types of amplitude change
 A population of cells is simulated using a detailed model of circadian rhythms (Model 2).
-Each cell in the population is subjected to a $20\%$ increase in the $\mathit{vtp}$ parameter ({\itshape Per} transcription rate) for $d=\nicefrac{\pi}{2}$, inducing both a phase and amplitude change.
+Each cell in the population is subjected to a $20\%$ increase in the $\mathit{vtp}$ parameter ({\itshape Per} transcription rate) for $d=\nicefrac{\pi}{2}$, inducing both a phase and amplitude change.}
 \end{manuscript}
 
 \begin{reviewer}
@@ -349,15 +453,15 @@ To make this point more clear, we have added additional explanatory text to the 
 
 \begin{manuscript}{Pages 12-13}
 The second contribution to the perturbed population trajectory comes from deviations from limit cycle oscillations in each cell.
-We calculate the population-level effect of these deviations by averaging over the deviations that occur at each phase.
+{\bfseries We calculate the population-level effect of these deviations by averaging over the deviations that occur at each phase.}
 We define the deviation trajectory $\delta x(\theta, \tilde{t})$ for each phase as the distance between the perturbed trajectory and the phase-adjusted reference:
 \begin{align}
   \delta x(\theta_0, \tilde{t}) &\coloneqq x(\tilde{t}) - x^\gamma(\tilde{t} + \theta_0 + \Delta \theta)\tag{48} \\
   \therefore\; \lim_{\tilde{t} \to \infty} \delta x(\theta, \tilde{t}) &= 0 \tag{49}
 \end{align}
-Since the perturbed trajectory ultimately converges with the phase-adjusted reference, deviations will converge to zero.
+{\bfseries Since the perturbed trajectory ultimately converges with the phase-adjusted reference, deviations will converge to zero.
 Since the phase change, $\Delta\theta$, associated with a perturbation at each phase is likely not known prior to calculating the perturbed trajectory, it is difficult to tabulate deviation trajectories associated with each final phase, $\theta_0 + \Delta\theta$.
-It is therefore more straightforward to find the average effect of single-cell perturbations at the population level by weighting the deviations by the phase density function prior to perturbation.
+It is therefore more straightforward to find the average effect of single-cell perturbations at the population level by weighting the deviations by the phase density function prior to perturbation.}
 \end{manuscript}
 
 \begin{reviewer}
@@ -371,10 +475,11 @@ Indeed, while we would have preferred to analyze data coming from pharmacologica
 We have added an additional paragraph to the conclusion to address this limitation, and point out potential future applications of the method:
 
 \begin{manuscript}{Page 18}
+\bfseries
 While our examples have focused on light-mediated perturbations, these approaches could also be applied to pharmacological perturbations.
 Some difficulty arises in obtaining such data in cultured cells, however, as entraining perturbations would require that pharmacological agents be introduced for only a finite duration.
 As medium or temperature changes are often enough to resynchronize cultured cells, a transient application is difficult to achieve experimentally.
-The search for clock-enhancing molecules has therefore tended to focus on constant drug concentrations: for instance, dose-dependent period or amplitude change following inhibition of CK1$\delta$ or similar targets (50).
+The search for clock-enhancing molecules has therefore tended to focus on constant drug concentrations: for instance, dose-dependent period or amplitude change following inhibition of CK1$\delta$ or similar targets (48).
 For {\itshape in vivo} systems, however, pharmacokinetics dictates a finite duration of action for both naturally secreted hormones and pharmacological therapies.
 More effective treatments might therefore be designed by explicitly accounting for such a transient response, perturbing peripheral clocks at the right phase to induce resynchronization and an increase in single-cell level amplitudes.
 \end{manuscript}
@@ -403,19 +508,32 @@ The current study should be compared to these models.
  
 In the relevant studies from Felix Naef, the authors use a phase model in which Gaussian white noise causes the frequencies to drift in time.
 The decay rate is estimated from stochastic simulations of detailed limit cycle models, and used to capture unperturbed bioluminescence data.
-We have incorporated two relevant references: Rougement et al, 2006 and Rougement et al, 2007, and added the references to the following sections of the manuscript:
+We have incorporated two relevant references:
+
+\begin{manuscript}{Page 21}
+{\bfseries
+32. Rougemont, J., and F. Naef, 2006. Collective synchronization in populations
+of globally coupled phase oscillators with drifting frequencies. {\itshape Phys.\ Rev.\ E} 73:011104.\\}
+\dots\\
+{\bfseries
+  36. Rougemont, J., and F. Naef, 2007. Dynamical signatures of cellular fluctuations and oscillator stability in peripheral circadian clocks. {\itshape Mol.\ Syst.\ Biol.\ } 3:93. }
+\end{manuscript}
+
+and added the references to the following sections of the manuscript:
 
 \begin{manuscript}{Page 5}
+\bfseries
 Large populations of oscillators are typically described using phase-only models (32), in which the state of each oscillator is represented only by its phase, $\theta$.
 \end{manuscript}
 \begin{manuscript}{Page 6}
-The phase diffusivity parameter $d$ (in units of inverse radians) describes the speed with which the population desynchronizes and can be fit to experimental data (35).
+The phase diffusivity parameter $d$ (in units of inverse radians) describes the speed with which the population desynchronizes and can be fit to experimental data {\bfseries (36)}.
 \end{manuscript}
 \begin{manuscript}{Page 11}
-Previous work has used limit cycle models to estimate population-level parameters, such as desynchronization rate, for phase-only models (35).
+\bfseries
+Previous work has used limit cycle models to estimate population-level parameters, such as desynchronization rate, for phase-only models (36).
 \end{manuscript}
 \begin{manuscript}{Page 12}
-Phase-diffusion models can explain why the gradual damping from experimental population-level data closely resembles an exponentially damped sinusoid, a result that has been shown experimentally (9) and computationally (35).
+  Phase-diffusion {\bfseries models can explain} why the gradual damping from experimental population-level data closely resembles an exponentially damped sinusoid, {\bfseries a result that has been shown experimentally (9) and computationally (36).}
 \end{manuscript}
 
 \begin{reviewer}
@@ -435,9 +553,9 @@ Our contribution lies in the definition and derivation of the relevant formulas 
 We have included the relevant citation from David Rand, along with a discussion in the manuscript text:
 
 \begin{manuscript}{Page 3}
-Mathematical models have long been used to understand the results of circadian experiments (15, 16), aided by definitions and computational techniques designed to match modeling predictions to experimental data.
-One such definition is the response function, a general technique that maps a change in an output variable to a temporary change in parameters (17).
-For instance, the phase response curve (PRC) has been used to characterize the entrainment behavior of both experimental and mathematical systems (18–20), and in analyzing the synchrony of populations of oscillators (21).
+Mathematical models have long been used to understand the results of circadian experiments (15, 16), {\bfseries aided by} definitions and computational techniques {\bfseries designed to match modeling predictions to experimental data.
+One such definition is the response function, a general technique that maps a change in an output variable to a temporary change in parameters (17).}
+For instance, the phase response curve (PRC) has been used to characterize the entrainment behavior of both experimental and mathematical systems (18-20), and in analyzing the synchrony of populations of oscillators (21).
 \end{manuscript}
 
 \begin{reviewer}
@@ -448,9 +566,9 @@ Thank you for drawing our attention to this work, as it lends some experimental 
 We have incorporated the citation into the relevant section of the manuscript:
 
 \begin{manuscript}{Page 14}
-Changes to the synchronization of the population from each perturbation are readily apparent, with both perturbations inducing a bimodal distribution in the phase density.
-While experimental data on individual cell phases was unavailable for this data set, bimodal distributions in SCN neuron firing following a phase shift have previously been seen experimentally (49).
-As higher-frequency features, these bimodal distributions dissipate as the phases diffuse.
+Changes to the synchronization of the population from each perturbation are readily apparent, {\bfseries with both perturbations inducing a bimodal distribution in the phase density.
+While experimental data on individual cell phases was unavailable for this data set, bimodal distributions in SCN neuron firing following a phase shift have previously been seen experimentally (47).
+As higher-frequency features, these bimodal distributions} dissipate as the phases diffuse.
 \end{manuscript}
 
 \begin{reviewer}
@@ -463,7 +581,7 @@ The importance of amplitude in entrainment is an important consideration and has
 We have incorporated several of these references into the motivation for the manuscript, as designing therapies to boost circadian amplitudes will surely have an effect on the entrainment of the oscillators as well:
 
 \begin{manuscript}{Page 2}
-The amplitude of circadian transcription is a relevant factor, and has been shown to play a critical role in phase resetting and entrainment (3, 4).
+  {\bfseries The amplitude of circadian transcription is a relevant factor, and has been shown to play a critical role in phase resetting and entrainment (3, 4).}
 Recent studies have further highlighted the importance of high peripheral clock amplitudes in maintaining metabolic health.
 \end{manuscript}
 
@@ -476,7 +594,7 @@ We have incorporated this reference into two places in the manuscript. First, in
 \begin{manuscript}{Page 18}
 It is therefore interesting that liver cells have not developed a stronger mechanism of intercellular coupling, such as in the SCN, to maintain robust amplitudes in the absence
 of external cues.
-Perhaps the ability to quickly re-entrain to a phase shift, which is often slowed by coupling (4), has historically been more advantageous than protection against highly variable food intake.
+Perhaps the ability to quickly re-entrain to a phase shift, which is often slowed by coupling {\bfseries (4)}, has historically been more advantageous than protection against highly variable food intake.
 \end{manuscript}
 
 

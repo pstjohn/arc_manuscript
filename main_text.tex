@@ -188,7 +188,7 @@ As with all probability density functions:
   \int_0^{2\pi} p(\theta, \tilde{t}) \; d\theta = 1
 \end{equation}
 The shape of $p(\theta, \tilde{t})$ changes as the cells advance in time.
-Stochastic effects cause the population to gradually desynchronize as slight cycle-to-cycle deviations are propagated throughout the population.
+Stochastic effects cause the population to gradually desynchronize as slight cycle-to-cycle deviations are propagated throughout the population \cite{Teramae2004}.
 For a infinite population of oscillators, these effects are well-described by a Fokker-Plank equation \cite{Stein1965}:
 \begin{equation}
   \frac{\partial p}{\partial \tilde{t}} = \frac{\partial p}{\partial \theta} + d\frac{\partial^2 p}{\partial \theta^2}\\
@@ -342,8 +342,7 @@ Here, the first term of the integrand $(S - \tilde{f}\dot{\theta})$ tracks the d
 The second term $(x^\gamma - \mu)$ weights this distance by whether or not the deviation occurs above or below the oscillatory mean, yielding negative amplitude changes when the trajectory is perturbed closer to the mean.
 Just as with the parameter-impulse PRC, the infinitesimal parameter-impulse ARC is defined as:
 \begin{equation}
-  \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0}
-  \frac{\Delta A}{\tilde{d}\, \Delta p}
+  \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0} \frac{\Delta A}{\tilde{d}\, \Delta p}
 \end{equation}
 and may be calculated from the state-impulse version with the following relationship:
 \begin{equation}
@@ -386,7 +385,7 @@ It is important to note that the ARC at the population level strongly depends on
 \subsection*{Population-level mean expression profiles}
 
 To efficiently capture the population-level effects of bioluminescence experiments, we couple the detailed single-cell ODE model to a phase-density model.
-Previous work has used limit cycle models to estimate population-level parameters, such as desynchronization rate, for phase-only models \cite{Rougemont2008}.
+Previous work has used limit cycle models to estimate population-level parameters, such as desynchronization rate, for phase-only models \cite{Rougemont2007}.
 In this study, we use an ODE model to calculate the response to a perturbation at each phase, and subsequently take the weighted average of these responses according to the phases of the cells in the population.
 
 Assuming each oscillator in the population follows the dynamics described by $x^\gamma(\theta)$, the unperturbed mean population-level expression, $\bar{x}(\tilde{t})$, can be found by taking the weighted average of the expression level over the current population:
@@ -577,6 +576,7 @@ Army Research Office.
 
 
 \bibliographystyle{biophysj.bst}
+% \bibliography{library.bib}
 \bibliography{condensed_library.bib}
 
 \end{document}
