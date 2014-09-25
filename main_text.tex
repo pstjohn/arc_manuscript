@@ -89,7 +89,7 @@ ARCs have also been used to characterize perturbations to groups of oscillators 
 However, previous definitions of the ARC are inconsistent between studies and do not simultaneously consider amplitude effects at the single-cell and population level.
 
 The choice of modeling framework dictates the type of amplitude response which can be predicted.
-Ordinary differential equation (ODE) models of gene regulation are capable of describing the amplitude and phase-resetting behavior of single cells, but fail to capture the collective dynamics of a population oscillators.
+Ordinary differential equation (ODE) models of gene regulation are capable of describing the amplitude and phase-resetting behavior of single cells, but fail to capture the collective dynamics of a population of oscillators.
 Likewise, phase-only models correctly capture the change in synchrony of a population, but do not capture fluctuations in amplitude of individual oscillators.
 Explicit stochastic simulations of populations of cells are capable of realistically capturing both single-cell and population-level effects, and have been successfully used to understand the response of coupled oscillators to external VIP perturbation \cite{An2013}.
 However, these methods are computationally expensive, and cannot be used for an analytical understanding of amplitude response.
@@ -109,19 +109,20 @@ Understanding the mechanisms and consequences of both types of amplitude regulat
 
 Ordinary differential equation (ODE) models take the general form
 \begin{equation}
-  \frac{dx}{dt} = f(x(t), p)
+  \frac{dx}{dt} = f(x(t), p),
   \label{eq:odefn}
 \end{equation}
 in which $x(t)$ represents the concentrations of the state variables, such as mRNA and protein concentrations, $f$ contains information on the production, degradation, and reactivity of the states, and $p$ are the kinetic parameters which govern reaction kinetics.
-Limit cycle models are ODE models in which the solution approaches a steady state oscillatory trajectory, satisfying the equation: \begin{equation}
-  \lim_{t \to \infty} \left[ x(t + T) - x(t) \right] = 0
+Limit cycle models are ODE models in which the solution approaches a steady state oscillatory trajectory, satisfying the equation:
+\begin{equation}
+  \lim_{t \to \infty} \left[ x(t + T) - x(t) \right] = 0.
   \label{eq:limit}
 \end{equation}
 The period is the smallest $T > 0$ for which Eq.~\ref{eq:limit} holds.
 The points on the stable limit cycle are denoted by $x^\gamma(\theta)$ with each point assigned to a value of a phase variable $\theta \in [0, 2\pi)$.
 For convenience, time in Eq.~\ref{eq:odefn} can be rescaled such that the period is $2\pi$:
 \begin{equation}
-  \tilde{t} = \frac{2\pi}{T}t; \quad \tilde{f} = \frac{T}{2\pi}\;f; \quad \frac{dx}{d\tilde{t}} = \tilde{f}(x(\tilde{t}), p)
+  \tilde{t} = \frac{2\pi}{T}t; \quad \tilde{f} = \frac{T}{2\pi}\;f; \quad \frac{dx}{d\tilde{t}} = \tilde{f}(x(\tilde{t}), p).
   \label{eq:that}
 \end{equation}
 The phase variable $\theta$ is therefore defined on the limit cycle as $\theta = \tilde{t}\mod 2\pi$, with $\theta = 0$ assigned to a unique and identifiable point.
@@ -132,13 +133,13 @@ In this study we restrict our analysis to temporary perturbations capable of ent
 The most simple entraining perturbation involves adding or removing components to a limit cycle system, resulting in a perturbed trajectory $x(t)$.
 Here the initial conditions are determined by the strength of the perturbation and the phase at which it is applied:
 \begin{equation}
-  x(0) \coloneqq x^\gamma(\theta_0) + \Delta x(0)
+  x(0) \coloneqq x^\gamma(\theta_0) + \Delta x(0).
   \label{eq:stateperturbation}
 \end{equation}
 This trajectory evolves according to Eq.~\ref{eq:odefn}, eventually returning to $x^\gamma$.
 It is useful to express this trajectory by the deviation from the limit cycle:
 \begin{equation}
-  \Delta x(\tilde{t}) = x(\tilde{t}) - x^\gamma(\tilde{t} + \theta_0)
+  \Delta x(\tilde{t}) = x(\tilde{t}) - x^\gamma(\tilde{t} + \theta_0).
   \label{eq:delxt}
 \end{equation}
 
@@ -146,22 +147,22 @@ In addition to perturbations directly to the state of the system, oscillators ca
 For a parameter pulse $\Delta p$ of duration $\tilde{d}$ (in radians) that ends at $\theta_0$, the oscillator deviates from the limit cycle trajectory according to:
 \begin{align}
   x_{\tilde{d}}(-\tilde{d}) &= x^\gamma(\theta_0 - \tilde{d}) \\
-  \frac{dx_{\tilde{d}}}{d\tilde{t}} &= \tilde{f}(x_{\tilde{d}}(\tilde{t}), p + \Delta p) \label{eq:ode_pert}
+  \frac{dx_{\tilde{d}}}{d\tilde{t}} &= \tilde{f}(x_{\tilde{d}}(\tilde{t}), p + \Delta p) \label{eq:ode_pert}.
 \end{align}
 The pulse trajectory $x_{\tilde{d}}(\tilde{t})$ is then integrated from $\tilde{t} = -\tilde{d} \to 0$, at which point the pulse is removed.
 A temporary parameter pulse is therefore equivalent to a state perturbation, but with the perturbation at $t = 0$ defined by:
 \begin{equation}
-  \Delta x(0) = x_{\tilde{d}}(0) - x^\gamma(\theta_0)
+  \Delta x(0) = x_{\tilde{d}}(0) - x^\gamma(\theta_0).
 \end{equation}
 A schematic depicting an example perturbed and reference trajectory is shown in Fig. 1A.
 
 The response of the system to very small perturbations is more efficiently calculated using ODE sensitivity analysis \cite{Rabitz1983}.
-The sensitivity matrix:
+The sensitivity matrix,
 \begin{equation}
-  S(t) = \frac{dx(t)}{dx(0)} = \lim_{\Delta x(0) \to 0}\frac{\Delta x(t)}{\Delta x(0)}
+  S(t) = \frac{dx(t)}{dx(0)} = \lim_{\Delta x(0) \to 0}\frac{\Delta x(t)}{\Delta x(0)},
   \label{eq:senslimit}
 \end{equation}
-can be calculated directly by integrating:
+can be calculated directly by integrating
 \begin{equation}
   \frac{d}{dt} S(t)  = \frac{df(x(t),p)}{dx}\; S(t)
   \label{eq:odesens}
@@ -174,7 +175,7 @@ A phase response curve (PRC) maps the change in phase resulting from the same pe
 Infinitesimal PRCs, the derivative of the phase change with respect to the perturbation, can be defined for state and parameter-impulse perturbations \cite{Taylor2008a}.
 Methods for efficiently calculating these quantities using ODE sensitivity analysis have been developed \cite{Taylor2008a}, with the important result that the parameter- and state-impulse PRCs can be related by the Jacobian matrix:
 \begin{equation}
-  \frac{d}{d\tilde{t}}\frac{d\theta}{dp} = \frac{d\theta}{dx}\frac{d\tilde{f}}{dp} 
+  \frac{d}{d\tilde{t}}\frac{d\theta}{dp} = \frac{d\theta}{dx}\frac{d\tilde{f}}{dp}.
   \label{eq:pPRCequiv}
 \end{equation}
 This result follows from the fact that in the limit of an infinitely short and small parameter pulse, $\Delta x(0) \to \nicefrac{d\tilde{f}}{dp}\,\tilde{d}\, \Delta p$.
@@ -183,15 +184,15 @@ This result follows from the fact that in the limit of an infinitely short and s
 Large populations of oscillators are typically described using phase-only models \cite{Rougemont2006}, in which the state of each oscillator is represented only by its phase, $\theta$.
 The synchrony of the population can be modeled using a probability density function $p(\theta, \tilde{t})$ that describes the probability of finding an oscillator at each phase \cite{Kuramoto1984}.
 The usefulness of probability density functions in describing the phase and amplitude responses of populations of circadian cells has been previously shown \cite{Ukai2007}.
-As with all probability density functions:
+As with all probability density functions,
 \begin{equation}
-  \int_0^{2\pi} p(\theta, \tilde{t}) \; d\theta = 1
+  \int_0^{2\pi} p(\theta, \tilde{t}) \; d\theta = 1.
 \end{equation}
 The shape of $p(\theta, \tilde{t})$ changes as the cells advance in time.
 Stochastic effects cause the population to gradually desynchronize as slight cycle-to-cycle deviations are propagated throughout the population \cite{Teramae2004}.
 For a infinite population of oscillators, these effects are well-described by a Fokker-Plank equation \cite{Stein1965}:
 \begin{equation}
-  \frac{\partial p}{\partial \tilde{t}} = \frac{\partial p}{\partial \theta} + d\frac{\partial^2 p}{\partial \theta^2}\\
+  \frac{\partial p}{\partial \tilde{t}} = \frac{\partial p}{\partial \theta} + d\frac{\partial^2 p}{\partial \theta^2}.
   \label{eq:pde}
 \end{equation}
 Due to the rescaling of $t$, the mean period of the population is $2\pi$.
@@ -201,24 +202,25 @@ Eq.~\ref{eq:pde} has periodic boundary conditions, with initial condition $\phi(
 \begin{align}
   \text{BCs:}\quad p(0, \tilde{t}) &= p(2\pi, \tilde{t}) \\
   \frac{\partial p}{\partial \theta}(0, \tilde{t}) &= \frac{\partial p}{\partial \theta}(2\pi, \tilde{t}) \\
-  \text{IC:}\quad p(\theta, 0) &= \phi(\theta)\label{eq:pde_ic}
+  \text{IC:}\quad p(\theta, 0) &= \phi(\theta).
+  \label{eq:pde_ic}
 \end{align}
 The solution of Eqs.~\ref{eq:pde}-\ref{eq:pde_ic} is well-characterized, with $p(\theta, \tilde{t})$ evolving in time as the convolution of the initial conditions with a wrapped normal distribution with mean $\tilde{t}$ and standard deviation $\sqrt{2d\tilde{t}}$ \cite{Chirikjian2009}:
 \begin{equation}
   p(\theta, \tilde{t}) = \phi(\theta) * \mathcal{WN}(\theta; \tilde{t},
-  \sqrt{2\, d\, \tilde{t}})
+  \sqrt{2\, d\, \tilde{t}}),
 \end{equation}
-in which the wrapped normal distribution \cite{Mardia2009} is defined as:
+in which the wrapped normal distribution \cite{Mardia2009} is defined as
 \begin{equation}
   {\cal WN}(\theta; \mu, \sigma) =
   \frac{1}{\sigma\sqrt{2\pi}}\sum_{k=-\infty}^\infty \exp\left[\frac{-(\theta
-  - \mu + 2\pi k)^2}{2\sigma^2}\right]
+  - \mu + 2\pi k)^2}{2\sigma^2}\right].
   \label{eq:wrapped_normal}
 \end{equation}
-Since the convolution of two normal distributions is also a normal distribution, it is efficient when possible to describe $\phi(\theta)$ as a normal distribution with mean $\mu_0$ and standard deviation $\sigma_0$, such that $p(\theta, \tilde{t})$ can be found analytically through:
+Since the convolution of two normal distributions is also a normal distribution, it is efficient when possible to describe $\phi(\theta)$ as a normal distribution with mean $\mu_0$ and standard deviation $\sigma_0$, such that $p(\theta, \tilde{t})$ can be found analytically through
 \begin{equation}
   p(\theta, \tilde{t}) = \mathcal{WN}(\theta; \mu_0 + \tilde{t},
-  \sqrt{\sigma_0^2 + 2d^2\tilde{t}^2})
+  \sqrt{\sigma_0^2 + 2d^2\tilde{t}^2}).
 \end{equation}
 
 
@@ -239,21 +241,21 @@ Therefore, in order to derive continuous approximations to the dynamics of a lar
 
 Following a perturbation to a single cell, the path that the perturbed trajectory $x(t)$ takes in returning to the limit cycle will have a different amplitude than the unperturbed trajectory.
 While such an amplitude change will only have a finite duration, it plays an important role when perturbations are repeatedly received by the clock, such as a peripheral oscillator entrained to daily metabolic stimuli.
-To define an amplitude change metric for such a case, we compare a perturbed trajectory $x(t)$ to a phase-shifted limit cycle reference $y(t)$, for which $x(t) \to y(t)$ for sufficiently long times:
+To define an amplitude change metric for such a case, we compare a perturbed trajectory $x(t)$ to a phase-shifted limit cycle reference $y(t)$, for which $x(t) \to y(t)$ for sufficiently long times.
+Since $x(t)$ approaches the reference as $t \to \infty$, the means of both trajectories are equal and can be calculated by
+\begin{equation}
+  \mu \coloneqq \int_0^{2\pi} \frac{x^\gamma(\theta)}{2\pi} \; d\theta.
+  \label{eq:mu}
+\end{equation}
+The amplitude change metric is defined as
 \begin{equation}
   \begin{aligned}
     \Delta A (x(t), y(t)) &\coloneqq \int_0^\infty (x(t) - \mu)^2 - (y(t) - \mu)^2 \; dt\\
-    &= \int_0^\infty h(t) \; dt
+    &= \int_0^\infty h(t) \; dt.
   \end{aligned}
   \label{eq:ampchangedefinition}
 \end{equation}
 This amplitude metric was chosen over alternatives, such as peak-trough distance, for its analytical tractability.
-Since $x(t)$ approaches the reference as $t \to \infty$, the means of both trajectories are equal.
-The mean of the limit cycle can therefore be calculated as:
-\begin{equation}
-  \mu \coloneqq \int_0^{2\pi} \frac{x^\gamma(\theta)}{2\pi} \; d\theta
-  \label{eq:mu}
-\end{equation}
 The integrand in Eq.~\ref{eq:ampchangedefinition}, abbreviated by $h(t)$, compares the variances of the reference and perturbed trajectories.
 When $h(t) > 0$, the trajectory is further from the mean than the reference, and similarly when $h(t) < 0$ the trajectory is closer to the mean than the reference.
 Thus the overall amplitude change can be calculated by integrating $h(t)$ until the two trajectories converge, returning an amplitude value for each state variable.
@@ -300,9 +302,9 @@ Several cycles are required for normal amplitudes to be restored, corresponding 
 \end{figure}
 
 Infinitesimal versions of response curves are often more general and easier to compute than those that track a specific perturbation strength \cite{Rand2004}.
-We therefore derive an expression for the infinitesimal ARC, defined as:
+We therefore derive an expression for the infinitesimal ARC, defined as
 \begin{equation}
-  \frac{dA}{dx} \coloneqq \lim_{\Delta x(0) \to 0} \frac{\Delta A\left(x(\tilde{t}),\ x^\gamma(\tilde{t} + \theta_0 + \Delta\theta)\right)}{\Delta x(0)} = \int_0^\infty \lim_{\Delta x(0) \to 0} \frac{h(t)}{\Delta x(0)} \; dt
+  \frac{dA}{dx} \coloneqq \lim_{\Delta x(0) \to 0} \frac{\Delta A\left(x(\tilde{t}),\ x^\gamma(\tilde{t} + \theta_0 + \Delta\theta)\right)}{\Delta x(0)} = \int_0^\infty \lim_{\Delta x(0) \to 0} \frac{h(t)}{\Delta x(0)} \; dt.
   \label{eq:sARC}
 \end{equation}
 While this quantity could be calculating by using a very small $\Delta x(0)$, it is more accurate and efficient to derive a direct method to calculate Eq.~\ref{eq:sARC} using the ODE sensitivities defined in Eq.~\ref{eq:odesens}.
@@ -312,9 +314,9 @@ Since $\Delta \theta \to 0$ as $\Delta x(0) \to 0$, we Taylor expand the limit c
   x^\gamma(t_\theta + \Delta\theta) &= x^\gamma(t_\theta) +
   \frac{dx^\gamma(t_\theta)}{d\theta}\Delta\theta + O(\Delta\theta^2)\\
   &= x^\gamma(t_\theta) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta +
-  O(\Delta\theta^2)
+  O(\Delta\theta^2).
 \end{align}
-Simplifying the integrand in Eq.~\ref{eq:sARC}:
+Simplifying the integrand in Eq.~\ref{eq:sARC},
 \begin{align}
   \frac{h(t)}{\Delta x(0)} &= \frac{1}{\Delta x(0)} \left[\left(x^\gamma(t_\theta) +
     \Delta x(\tilde{t}) - \mu\right)^2 - \left(x^\gamma(t_\theta +
@@ -324,29 +326,29 @@ Simplifying the integrand in Eq.~\ref{eq:sARC}:
   &= \frac{1}{\Delta x(0)} \left[\left(\Delta x(\tilde{t}) -
     \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta\right) \left(\Delta
     x(\tilde{t}) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta +
-    2(x^\gamma(t_\theta) - \mu)\right) \right]
+    2(x^\gamma(t_\theta) - \mu)\right) \right].
 \end{align}
 Taking the limit of this integrand as $\Delta x(0) \to 0$ cancels several differential terms, and allows the remainder to be substituted with quantities that can be calculated using ODE sensitivity analysis:
 \begin{align}
   \lim_{\Delta x(0) \to 0} \frac{h(t)}{\Delta x(0)} &= 2\left(\lim_{\Delta x(0) \to 0}\frac{\Delta x(\tilde{t})}{\Delta x(0)} - \tilde{f}\left(x^\gamma(t_\theta)\right)\lim_{\Delta x(0) \to 0}\frac{\Delta\theta}{\Delta x(0)}\right) \left(x^\gamma(t_\theta) - \mu\right)\\
-  &= 2\left(S(\tilde{t}) - \tilde{f}(x^\gamma(t_\theta))\frac{d\theta}{dx}\right)\left(x^\gamma(t_\theta) - \mu\right)
+  &= 2\left(S(\tilde{t}) - \tilde{f}(x^\gamma(t_\theta))\frac{d\theta}{dx}\right)\left(x^\gamma(t_\theta) - \mu\right).
   \label{eq:sens_sub}
 \end{align}
 Note that in Eq.~\ref{eq:sens_sub}, $\nicefrac{d\theta}{dx}$ represents the derivative of $\Delta\theta$ with respect to the perturbation, and is therefore a scalar quantity.
 The infinitesimal state-impulse ARC may therefore be calculated directly from the ODE sensitivity matrix and the PRC, allowing the amplitude change for an infinitesimal perturbation to be calculated exactly and efficiently:
 \begin{equation}
-  \frac{dA}{dx} = \int_0^\infty 2\left(S(\tilde{t}) - \tilde{f}(x^\gamma(t_\theta))\frac{d\theta}{dx}\right)\left(x^\gamma(t_\theta) - \mu\right) \; dt
+  \frac{dA}{dx} = \int_0^\infty 2\left(S(\tilde{t}) - \tilde{f}(x^\gamma(t_\theta))\frac{d\theta}{dx}\right)\left(x^\gamma(t_\theta) - \mu\right) \; dt.
   \label{eq:siARC}
 \end{equation}
 Here, the first term of the integrand $(S - \tilde{f}\dot{\theta})$ tracks the distance from the perturbed trajectory to the limit cycle, which decays to zero as $t \to \infty$.
 The second term $(x^\gamma - \mu)$ weights this distance by whether or not the deviation occurs above or below the oscillatory mean, yielding negative amplitude changes when the trajectory is perturbed closer to the mean.
-Just as with the parameter-impulse PRC, the infinitesimal parameter-impulse ARC is defined as:
+Just as with the parameter-impulse PRC, the infinitesimal parameter-impulse ARC is defined as
 \begin{equation}
-  \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0} \frac{\Delta A}{\tilde{d}\, \Delta p}
+  \frac{d}{d\tilde{t}}\frac{dA}{dp} \coloneqq \lim_{\tilde{d},\; \Delta p \to 0} \frac{\Delta A}{\tilde{d}\, \Delta p},
 \end{equation}
 and may be calculated from the state-impulse version with the following relationship:
 \begin{equation}
-  \frac{d}{d\tilde{t}}\frac{dA}{dp} = \frac{dA}{dx}\frac{d\tilde{f}}{dp}
+  \frac{d}{d\tilde{t}}\frac{dA}{dp} = \frac{dA}{dx}\frac{d\tilde{f}}{dp}.
     \label{eq:piARC}
 \end{equation}
 As with Eq.~\ref{eq:pPRCequiv}, this equivalency reflects the fact that for a pulse of infinitely short duration, a parameter change is equivalent to changing the state of the system along the direction specified by the Jacobian.
@@ -359,24 +361,24 @@ These approaches are commonly used in understanding phase models \cite{Kuramoto1
 A phase transition curve, $g(\theta) = \theta + \Delta\theta$, maps the phase of an oscillator before perturbation to its phase after the perturbation.
 Since individual oscillators are neither created nor destroyed during the perturbation, it is possible - yet numerically difficult - to directly calculate the phase probability distribution following perturbation using the standard change of variables relation:
 \begin{equation}
-  \hat{p}(\theta, \tilde{t})\; dg(\theta) = p(\theta, \tilde{t})\; d\theta
+  \hat{p}(\theta, \tilde{t})\; dg(\theta) = p(\theta, \tilde{t})\; d\theta.
   \label{eq:pdfinversion}
 \end{equation}
 However, it is easier to estimate the mean and standard deviation of the perturbed population $\hat{p}(\theta, \tilde{t})$ using directional statistics \cite{Mardia2009}.
 A population defined on the unit circle can be described by a complex variable $z = \rho e^{i\bar{\theta}}$, where $\bar{\theta}$ is the mean phase and $\rho$, the synchronization index, is related to the standard deviation of the population.
 For $\rho = 1$, the population is clustered about one mean phase, while for $\rho = 0$ the population is evenly balanced across the unit circle.
-Complex variables for the population before and after perturbation can be calculated via:
+Complex variables for the population before and after perturbation can be calculated via
 \begin{align}
   z &\coloneqq \int_0^{2\pi} e^{i\theta} p(\theta, \tilde{t}) \; d\theta \label{eq:zbar}\\
   \hat{z} &\coloneqq  \int_0^{2\pi} e^{i\theta} \hat{p}(\theta, \tilde{t}) \; d\theta =
-  \int_0^{2\pi} e^{i g(\theta)} p(\theta, \tilde{t}) \; d\theta
+  \int_0^{2\pi} e^{i g(\theta)} p(\theta, \tilde{t}) \; d\theta.
   \label{eq:zhat}
 \end{align}
 In Eq.~\ref{eq:zhat}, we avoid calculating the perturbed population explicitly by instead integrating over the new phases at the prior population density function.
-Population-level amplitude and phase responses can therefore be calculated by:
+Population-level amplitude and phase responses can therefore be calculated by
 \begin{align}
   \Delta \bar{\theta} &= \angle z - \angle \hat{z} \\
-  \Delta \rho &= |z| - |\hat{z}|
+  \Delta \rho &= |z| - |\hat{z}|.
   \label{eq:popampchange}
 \end{align}
 Population-level PRCs and ARCs can be tabulated by solving Eqs.~\ref{eq:zbar}-\ref{eq:popampchange} for populations $p(\theta, \tilde{t})$ with different mean phases.
@@ -390,20 +392,18 @@ In this study, we use an ODE model to calculate the response to a perturbation a
 
 Assuming each oscillator in the population follows the dynamics described by $x^\gamma(\theta)$, the unperturbed mean population-level expression, $\bar{x}(\tilde{t})$, can be found by taking the weighted average of the expression level over the current population:
 \begin{equation}
-  \bar{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta) p(\theta, \tilde{t}) \;
-  d\theta
+  \bar{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta) p(\theta, \tilde{t}) \; d\theta.
   \label{eq:xbar}
 \end{equation}
 
 Phase-diffusion models can explain why the gradual damping from experimental population-level data closely resembles an exponentially damped sinusoid, a result that has been shown experimentally \cite{Welsh2004} and computationally \cite{Rougemont2007}.
 Our method similarly demonstrates exponential decay: for the idealized system $x^\gamma(\theta) = \cos(\theta)$ starting from a synchronized state:
 \begin{align}
-  \bar{x}(\tilde{t}) &= \frac{1}{\sqrt{4\pi d\tilde{t}}}\int_{-\infty}^{\infty}
-  \cos(x) \exp\left(-\frac{(x - \tilde{t})^2}{4d\tilde{t}}\right)\; dx \\
-  &= \Re\left[\frac{1}{\sqrt{4\pi d\tilde{t}}}\int_{-\infty}^{\infty}
-    \exp(ix) \exp\left(-\frac{(x - \tilde{t})^2}{4d\tilde{t}}\right)\; dx\right] \\
+  \bar{x}(\tilde{t}) &= \frac{1}{\sqrt{4\pi d\tilde{t}}}\int_{-\infty}^{\infty} \cos(x) \exp\left(-\frac{(x - \tilde{t})^2}{4d\tilde{t}}\right)\; dx \\
+  &= \Re\left[\frac{1}{\sqrt{4\pi d\tilde{t}}}\int_{-\infty}^{\infty} \exp(ix) \exp\left(-\frac{(x - \tilde{t})^2}{4d\tilde{t}}\right)\; dx\right] \\
     &= \Re\left[e^{(i - d)\tilde{t}}\right]\\
-    &= e^{-d\tilde{t}} \cos(\tilde{t}) \label{eq:expsin}
+    &= e^{-d\tilde{t}} \cos(\tilde{t}).
+    \label{eq:expsin}.
 \end{align}
 Due to the smoothing effect of phase diffusion, higher frequency sinusoidal components of the limit cycle are damped faster than lower frequency components, resulting in an exponentially decaying sinusoids even for limit cycles that are not sinusoidal in sufficiently disperse populations.
 The analytical result in Eq.~\ref{eq:expsin} allows us to easily estimate the phase diffusivity parameter in Eq.~\ref{eq:pde} by simply fitting an exponentially damped sinusoid to detrended bioluminescence data.
@@ -429,9 +429,9 @@ As time passes, population-level rhythms resemble an exponentially damped sinuso
 Next we describe how to calculate population-level mean expression following a perturbation.
 The perturbed trajectory $\hat{x}(\tilde{t})$ can be decomposed into contributions from two sources.
 First, for long times after the perturbation, each individual oscillator will have returned to the limit cycle $x^\gamma(\theta)$, but with a new population density $\hat{p}(\theta, \tilde{t})$.
-This steady-state perturbed trajectory $\hat{x}_{ss}(\tilde{t})$ can be found by:
+This steady-state perturbed trajectory $\hat{x}_{ss}(\tilde{t})$ can be found by
 \begin{equation}
-  \hat{x}_{ss}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta) \hat{p}(\theta, \tilde{t}) \; d\theta
+  \hat{x}_{ss}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta) \hat{p}(\theta, \tilde{t}) \; d\theta.
   \label{eq:xhatss}
 \end{equation}
 For very long times following perturbation, the new phase probability density could be approximated using the initial mean and standard deviation found through Eq.~\ref{eq:zhat}, as jagged profiles in the population density will eventually smooth to a normal distribution.
@@ -442,14 +442,14 @@ We calculate the population-level effect of these deviations by averaging over t
 We define the deviation trajectory $\delta x(\theta, \tilde{t})$ for each phase as the distance between the perturbed trajectory and the phase-adjusted reference:
 \begin{align}
   \delta x(\theta_0, \tilde{t}) &\coloneqq x(\tilde{t}) - x^\gamma(\tilde{t} + \theta_0 + \Delta \theta) \\
-  \therefore\; \lim_{\tilde{t} \to \infty} \delta x(\theta, \tilde{t}) &= 0
+  \therefore\; \lim_{\tilde{t} \to \infty} \delta x(\theta, \tilde{t}) &= 0.
 \end{align}
 Since the perturbed trajectory ultimately converges with the phase-adjusted reference, deviations will converge to zero.
 Since the phase change, $\Delta\theta$, associated with a perturbation at each phase is likely not known prior to calculating the perturbed trajectory, it is difficult to tabulate deviation trajectories associated with each final phase, $\theta_0 + \Delta\theta$.
 It is therefore more straightforward to find the average effect of single-cell perturbations at the population level by weighting the deviations by the phase density function prior to perturbation.
-The population-level response to a perturbation, $\hat{x}(\tilde{t})$, is therefore defined as:
+The population-level response to a perturbation, $\hat{x}(\tilde{t})$, is therefore defined as
 \begin{equation}
-  \hat{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta)\hat{p}(\theta, \tilde{t}) + \delta x(\theta, \tilde{t})p(\theta, \tilde{t}) \; d\theta
+  \hat{x}(\tilde{t}) = \int_0^{2\pi} x^\gamma(\theta)\hat{p}(\theta, \tilde{t}) + \delta x(\theta, \tilde{t})p(\theta, \tilde{t}) \; d\theta.
   \label{eq:xhat}
 \end{equation}
 Here the first term is equivalent to $\hat{x}_{ss}(\tilde{t})$, the steady-state perturbed trajectory, while the second term decays to zero as individual oscillators return to their steady-state amplitude.
