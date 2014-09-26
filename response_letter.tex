@@ -92,6 +92,21 @@ The revised manuscript becomes much more clear. The authors addressed most of my
 2) Another concern is regarding the major result of the manuscript (Fig. 5). The author perturbed the degradation of Per mRNA parameter in response to light. However, this conflicts with the previous experimental studies, which have shown that light promotes the transcription of Per mRNA via CREB, not degradation. 
 \end{reviewer}
 
+This is a valid point, since our analysis captures the increase in {\itshape Per} mRNA following light pulses as a {\itshape\bfseries decrease} in the degradation rate of {\itshape Per}.
+In the model, {\itshape Per} transcription is controlled by several parameters: the maximum transcription rate, transcription rate kinetic constant, maximum degradation rate, degradation rate kinetic constant, and translation rate.
+Since we acknowledge that the model does not perfectly describe the true system, we tried to fit the model to data by searching the parameter ARCs for parameters and reporter states which gave the appropriate response. 
+From these parameters, the maximum {\itshape Per} transcription rate and {\itshape Cry} mRNA emerged as the best choice given the response of the model and known experimental results:
+
+\begin{manuscript}{Page 16}
+The next step in capturing the experimental data was finding a perturbation capable of desynchronizing the system.
+To find such a perturbation, we calculated population-level ARCs at several different knockdown strengths for each parameter in the model.
+We selected the degradation rate of {\itshape Per} mRNA from the feasible parameters, due to PER's known induction by CREB following photo-perturbation (46).
+The parameter was reduced by $28.5\%$ during the light pulses, a value fit to maximize light-induced desynchrony.
+The output variable, PER2-luciferase in the experimental system, was chosen to be represented by {\itshape Cry1} mRNA - an E box activated gene that is buffered from the direct effects of the parameter perturbation.
+\end{manuscript}
+
+% We should emphasize that we are not predicting {\itshape Per} induction following light actually occurs via degradation, but rather that by acknowledging the model does not perfectly capture experimental 
+
 \begin{reviewer}
 3) The key goal of this manuscript is distinguishing the single-cell level and population-level amplitude change. For this, the authors applied their tool to the experimental data (Fig. 5). However, Fig. 5 does not clearly show how their tool achieves such goal. Please provide additional figures. For instance, $x_{ss}$ (steady-state perturbed trajectory) for perturbed and unperturbed cases, $p(\theta, t)$ for unperturbed case as well as perturbed case etc, so that readers can clearly see the difference of effect via single cell level and population level.  
 \end{reviewer}
