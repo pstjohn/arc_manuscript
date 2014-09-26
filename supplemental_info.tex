@@ -30,9 +30,13 @@
 \begin{document}
 
 \begin{model}
-\caption{Adapted from Nov\'{a}k \& Tyson, 2008 \cite{Novak2008}. Model used for
+\caption{
+Adapted from Nov\'{a}k \& Tyson, 2008 \cite{Novak2008}. Model used for
 ARC demonstrations in Figs. 1-3, S1 ($P=4$) and Fig. S2, Movies S1 \& S2
-($P=2$).}
+($P=2$).
+It should be noted that the use of the stochastic simulation algorithm for reactions with non-elementary propensities may inaccurately represent the noise of the full system.
+In this case, the volume of the stochastic simulations was chosen as $\Omega = 250$ to give a physiologically realistic desynchronization rate.
+}
   \centering
 \begin{align*}
   \frac{dX}{dt} &= \frac{1}{1 + Y} - X \\
@@ -186,21 +190,18 @@ for networks of uncoupled cells.}
 \begin{figure}[h!]
   \begin{center}
     \includegraphics[width=\textwidth]{figures/figure_S3.pdf}
-    \caption{{\bfseries Validation of continuous methods with alternate
-    models.} ({\bfseries A}) The Oregonator model (Model 3) was tested as an
-    example of a mass-action limit cycle oscillator. A population of 2000
-    oscillators was perturbed at size different mean phases, $\mu$, by
-    increasing the $\mathit{c2}$ parameter by $50\%$ for $d=\pi$ (highlighted
-    region). Only the average $\mathit{Y2}$ variable is plotted. ({\bfseries
-    B}) The model described in \cite{Hirota2012} (Model 2) was similarly tested
-    at a variety of mean phases by reducing the $\mathit{vdp}$ parameter by
-    $28.5\%$ and plotting the resulting $\mathit{c2}$ state variable (as in
-    Fig.~5). Parameters for the continuous approximations were found by
-    estimating the phase, initial standard deviation, period, and phase
-    diffusivity of the control population. Good agreement is seen between the
-  continuous and stochastic simulations, indicating the proposed method is
-suitable for predicting the population-level responses for a variety of model
-types.}
+    \caption{
+{\bfseries Validation of continuous methods with alternate models.}
+({\bfseries A}) The Oregonator model (Model 3) was tested as an example of a mass-action limit cycle oscillator.
+A population of 2000 oscillators was perturbed at size different mean phases, $\mu$, by increasing the $\mathit{c2}$ parameter by $50\%$ for $d=\pi$ (highlighted region).
+Only the average $\mathit{Y2}$ variable is plotted.
+({\bfseries B}) The model described in \cite{Hirota2012} (Model 2) was similarly tested at a variety of mean phases by reducing the $\mathit{vdp}$ parameter by $28.5\%$ and plotting the resulting $\mathit{c2}$ state variable (as in Fig.~5).
+Parameters for the continuous approximations were found by estimating the phase, initial standard deviation, period, and phase diffusivity of the control population.
+Good agreement is seen between the continuous and stochastic simulations, indicating the proposed method is suitable for predicting the population-level responses for a variety of model types.
+The slightly reduced accuracy seen in the larger Model 2 demonstrates a limitation of the method, which should be considered before applying the method to extreme cases.
+As Eq.~44 tabulates the response of the system from the limit cycle, systems which are perturbed from states far from the deterministic limit cycle will not be captured appropriately.
+Therefore, the difference in accuracy between Model 2 and Model 3 likely comes from increased deviation about the deterministic limit cycle in a greater number of spatial dimensions.
+}
 \end{center}
 \end{figure}
 
@@ -215,7 +216,7 @@ The difference between this trajectory and the steady-state perturbed trajectory
 Single-cell amplitudes are greatly increased following the first pulse, and altered significantly following the second.
 ({\bfseries B})
 Comparison of the population densities for the control (dashed) and perturbed (solid) simulations.
-The perturbed population is greatly desynchronized following the first light pulse, as indicated by its flatness relative to the control trajectory. 
+The perturbed population is greatly desynchronized following the first light pulse, as indicated by its flatness relative to the control population. 
 Following the second pulse, the perturbed population is more concentrated than the control, indicating higher amplitudes. 
 These comparisons demonstrate the changes in population synchrony which occur due to the light pulse. 
 }
