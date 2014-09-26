@@ -81,5 +81,48 @@ The amplitude change metric is defined as}
 \end{equation}
 \end{manuscript}
 
+\section*{Reviewer \#2}
+\begin{reviewer}
+The revised manuscript becomes much more clear. The authors addressed most of my concerns in their revision. However, I have still couple concerns regarding the manuscript. 
+ 
+1) In the previous review, I was concerned about using the Gillesplie algorithm for the model with non-elementary reactions because recent studies have clearly showed the inaccuracy of doing that (Thomas, Straube and Grima BMC Syst Biol (2012), Agarwal et al. J Chem Phy (2012) and Kim, Josic and Bennett Biophy J (2014)). Regarding this concern, the author showed that their continuous approximation also works for the model based on mass-action kinetics (Model 2). But, in the manuscript, the approximation is more accurate for Model 2 than other models, which are based on non-elementary reactions. This indicates that the inaccuracy coming from the Gillespie algorithm with non-elementary reaction appears to contribute the error seen in Model 1 and 3. Furthermore, I am mostly concerned that this manuscript can mislead the audience that using Gillespie algorithm with non-elementary reactions is justified. Please, clearly discuss the limitation in this approach. 
+\end{reviewer}
+
+\begin{reviewer}
+2) Another concern is regarding the major result of the manuscript (Fig. 5). The author perturbed the degradation of Per mRNA parameter in response to light. However, this conflicts with the previous experimental studies, which have shown that light promotes the transcription of Per mRNA via CREB, not degradation. 
+\end{reviewer}
+
+\begin{reviewer}
+3) The key goal of this manuscript is distinguishing the single-cell level and population-level amplitude change. For this, the authors applied their tool to the experimental data (Fig. 5). However, Fig. 5 does not clearly show how their tool achieves such goal. Please provide additional figures. For instance, $x_{ss}$ (steady-state perturbed trajectory) for perturbed and unperturbed cases, $p(\theta, t)$ for unperturbed case as well as perturbed case etc, so that readers can clearly see the difference of effect via single cell level and population level.  
+\end{reviewer}
+
+This is a good suggestion, and we have therefore added a figure to explicitly highlight the contributions from the population and single-cell level.
+Due to lack of space in the main text and desire not to further complicate the original figure, we have added this figure as Figure~S4. A reference to the figure was added to the main text of the manuscript:
+
+\begin{manuscript}{Page 16}
+The phase probability density function for the light-sensitive model trajectory is shown in Fig.~5C for several representative time points.
+\ldots
+{\bfseries Amplitude change in this case is mediated both at the population and single-cell level, as indicated by their representative ARCs. The contributions from each source are summarized in Fig.~S4.}
+\end{manuscript}
+
+with the following figure and caption added to the supplementary material:
+
+\begin{manuscript}{Supplemental Info, Page 7}
+  \begin{center}
+    \includegraphics[width=.85\textwidth]{figures/figure_S4.pdf}\\
+  \end{center}
+{\bfseries Figure S4: Evidence of single-cell and population-level amplitude change.}
+({\bfseries A}) The simulated control trajectory as shown in Fig.~5 is plotted again as $\bar{x}(\tilde{t})$.
+The simulated light-sensitive trajector is also replotted as $\hat{x}(\tilde{t})$, which incorperates both single-cell and population-level effects.
+The difference between this trajectory and the steady-state perturbed trajectory following both pulses, $\hat{x}_{ss}(\tilde{t})$, demonstrates the effect of single-cell level amplitude change in this particular case. 
+Single-cell amplitudes are greatly increased following the first pulse, and altered significantly following the second.
+({\bfseries B})
+Comparison of the population densities for the control (dashed) and perturbed (solid) simulations.
+The perturbed population is greatly desynchronized following the first light pulse, as indicated by its flatness relative to the control trajectory. 
+Following the second pulse, the perturbed population is more concentrated than the control, indicating higher amplitudes. 
+These comparisons demonstrate the changes in population synchrony which occur due to the light pulse. 
+\end{manuscript}
+
+
 
 \end{document}
