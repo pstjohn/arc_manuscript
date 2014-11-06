@@ -311,15 +311,9 @@ Since $\Delta \theta \to 0$ as $\Delta x(0) \to 0$, we Taylor expand the limit c
 \end{align}
 Simplifying the integrand in Eq.~\ref{eq:sARC},
 \begin{align}
-  \frac{h(t)}{\Delta x(0)} &= \frac{1}{\Delta x(0)} \left[\left(x^\gamma(t_\theta) +
-    \Delta x(\tilde{t}) - \mu\right)^2 - \left(x^\gamma(t_\theta +
-    \Delta \theta) - \mu\right)^2 \right]\\
-  &= \frac{1}{\Delta x(0)} \left[\left(x^\gamma(t_\theta) +
-    \Delta x(\tilde{t}) - \mu\right)^2 - \left(x^\gamma(t_\theta) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta - \mu\right)^2 \right]\\
-  &= \frac{1}{\Delta x(0)} \left[\left(\Delta x(\tilde{t}) -
-    \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta\right) \left(\Delta
-    x(\tilde{t}) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta +
-    2(x^\gamma(t_\theta) - \mu)\right) \right].
+  \frac{h(t)}{\Delta x(0)} &= \frac{1}{\Delta x(0)} \left[\left(x^\gamma(t_\theta) + \Delta x(\tilde{t}) - \mu\right)^2 - \left(x^\gamma(t_\theta + \Delta \theta) - \mu\right)^2 \right]\\
+  &= \frac{1}{\Delta x(0)} \left[\left(x^\gamma(t_\theta) + \Delta x(\tilde{t}) - \mu\right)^2 - \left(x^\gamma(t_\theta) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta - \mu\right)^2 \right]\\
+  &= \frac{1}{\Delta x(0)} \left[\left(\Delta x(\tilde{t}) - \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta\right) \left(\Delta x(\tilde{t}) + \tilde{f}\left(x^\gamma(t_\theta)\right)\Delta\theta + 2(x^\gamma(t_\theta) - \mu)\right) \right].
 \end{align}
 Taking the limit of this integrand as $\Delta x(0) \to 0$ cancels several differential terms, and allows the remainder to be substituted with quantities that can be calculated using ODE sensitivity analysis:
 \begin{align}
