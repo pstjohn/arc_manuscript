@@ -27,7 +27,22 @@
 \usepackage{supertabular}
 \usepackage{booktabs}
 
+% Puts the affiliations on the cover page
+\usepackage{authblk}
+
 \begin{document}
+\title{Supporting Material for:\\ Amplitude metrics for cellular \\ circadian bioluminescence reporters}
+\author[1]{Peter C. St. John}
+\author[2]{Stephanie R. Taylor}
+\author[1]{John H. Abel}
+\author[1,*]{Francis J. Doyle III}
+\affil[1]{Department of Chemical Engineering, University of California Santa
+Barbara, Santa Barbara, California 93106-5080}
+\affil[2]{Department of Computer Science, Colby College, Waterville, Maine
+04901}
+\affil[*]{Email: \texttt{doyle@engineering.ucsb.edu}}
+\date{}
+\maketitle
 
 \begin{model}
 \caption{
@@ -72,35 +87,40 @@ of circadian rhythms used for simulations in Figs. 4-5.}
 \frac{d\,\mathit{C2n}}{dt} &= \mathit{C2} \cdot \mathit{P} \cdot \mathit{vaC1P} - \frac{\mathit{C2n} \cdot \mathit{MC2n} \cdot \mathit{vdCn}}{\mathit{C1n} + \mathit{C2n} + \mathit{kdCn}} - \mathit{C2n} \cdot \mathit{vdC1P}\\
 \end{align*}
   
-\tablehead{\toprule Parameter & Value\\\midrule}
 
-\begin{supertabular}{rl}
+% \tablehead{}
+\begin{tabular}{rl}
+\toprule Parameter & Value\\\midrule
 $vtp $  & 0.195   \\
 $vtc1$  & 0.131   \\
 $vtc2$  & 0.114   \\
 $knp $  & 0.425   \\
 $knc1$  & 0.259   \\
 $vdp $  & 0.326   \\
-$vdc1$  & 0.676   \\
-\bottomrule\end{supertabular}\hfil
-\begin{supertabular}{rl}
+$vdc1$  & 0.676   \\\bottomrule
+\end{tabular}\hfil
+%
+\begin{tabular}{rl}
+\toprule Parameter & Value\\\midrule
 $vdc2$ & 0.608   \\
 $kdp $ & 0.0115  \\
 $kdc1$ & 1.15    \\
 $vdP $ & 2.97    \\
 $vdC1$ & 0.0338  \\
 $vdC2$ & 1.52    \\
-$vdCn$ & 1.69    \\
-\bottomrule\end{supertabular}\hfil
-\begin{supertabular}{rl}
+$vdCn$ & 1.69    \\\bottomrule
+\end{tabular}\hfil
+%
+\begin{tabular}{rl}
+\toprule Parameter & Value\\\midrule
 $MC2n $ & 2.02    \\
 $kdP  $ & 0.101   \\
 $kdC1 $ & 3.32    \\
 $kdCn $ & 0.0526  \\
 $vaC1P$ & 0.0406  \\
 $vdC1P$ & 0.00175 \\
-$ktxnp$ & 3.0     \\
-\bottomrule\end{supertabular}
+$ktxnp$ & 3.0     \\\bottomrule
+\end{tabular}
 \end{model}
 
 \begin{model}

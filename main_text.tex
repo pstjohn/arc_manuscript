@@ -17,12 +17,7 @@
 \usepackage[labelfont={bf}, margin=1cm]{caption}
 \usepackage{units}
 
-% \usepackage[utf8]{inputenc}
-% \usepackage[english]{babel}
-% \usepackage{booktabs}
-
-% \numberwithin{equation}{section}
-
+% Puts the affiliations on the cover page
 \usepackage{authblk}
 
 \begin{document}
@@ -36,7 +31,6 @@ Barbara, Santa Barbara, California 93106-5080}
 \affil[2]{Department of Computer Science, Colby College, Waterville, Maine
 04901}
 \affil[*]{Email: \texttt{doyle@engineering.ucsb.edu}}
-% \author{}
 \date{\today}
 \maketitle
 
@@ -47,7 +41,6 @@ Regulatory Network | Stochastic | Synchronization
 \end{center}
 
 \pagebreak
-% 300 words
 \begin{abstract}
 Bioluminescence rhythms from cellular reporters have become the most common method used to quantify oscillations in circadian gene expression.
 These experimental systems can reveal phase and amplitude change resulting from circadian disturbances, and can be used in conjunction with mathematical models to lend further insight into the mechanistic basis of clock amplitude regulation.
@@ -370,8 +363,7 @@ For $\rho = 1$, the population is clustered about one mean phase, while for $\rh
 Complex variables for the population before and after perturbation can be calculated via
 \begin{align}
   z &\coloneqq \int_0^{2\pi} e^{i\theta} p(\theta, \tilde{t}) \; d\theta \label{eq:zbar}\\
-  \hat{z} &\coloneqq  \int_0^{2\pi} e^{i\theta} \hat{p}(\theta, \tilde{t}) \; d\theta =
-  \int_0^{2\pi} e^{i g(\theta)} p(\theta, \tilde{t}) \; d\theta.
+  \hat{z} &\coloneqq  \int_0^{2\pi} e^{i\theta} \hat{p}(\theta, \tilde{t}) \; d\theta = \int_0^{2\pi} e^{i g(\theta)} p(\theta, \tilde{t}) \; d\theta.
   \label{eq:zhat}
 \end{align}
 In Eq.~\ref{eq:zhat}, we avoid calculating the perturbed population explicitly by instead integrating over the new phases at the prior population density function.
@@ -577,7 +569,6 @@ This work was supported by the National Institutes of Health/National Institute 
 
 
 \bibliographystyle{biophysj.bst}
-% \bibliography{library.bib}
 \bibliography{condensed_library.bib}
 
 \end{document}
